@@ -1,22 +1,31 @@
 const allCategories = document.querySelector("ul#categories");
+// console.log(allCategories);
 
-const numberCategories = allCategories.querySelectorAll("li.item");
+const numberCategories = allCategories.querySelectorAll(".item");
 console.log(`Number of categories: `, numberCategories.length);
+// console.log(numberCategories);
 
-const firstEl = allCategories.firstElementChild;
+// 2 варіант
+numberCategories.forEach((element) => {
+  console.log("Category:", element.querySelector("h2").textContent);
+  console.log("Category:", element.querySelectorAll("li").length);
+});
+
+//1 варіант
+// const firstEl = allCategories.firstElementChild;
 // console.log(firstEl);
 // const titleFirstEl = firstEl.querySelector("h2");
 // const itemFistEl = firstEl.querySelectorAll("li");
 
-console.log(`Category:`, firstEl.querySelector("h2").textContent);
-console.log(`Elements:`, firstEl.querySelectorAll("li").length);
+// console.log(`Category:`, firstEl.querySelector("h2").textContent);
+// console.log(`Elements:`, firstEl.querySelectorAll("li").length);
 
-const secondEl = allCategories.children[1];
+// const secondEl = allCategories.children[1];
 
-console.log(`Category:`, secondEl.querySelector("h2").textContent);
-console.log(`Elements:`, secondEl.querySelectorAll("li").length);
+// console.log(`Category:`, secondEl.querySelector("h2").textContent);
+// console.log(`Elements:`, secondEl.querySelectorAll("li").length);
 
-const lastEl = allCategories.lastElementChild;
+// const lastEl = allCategories.lastElementChild;
 
-console.log(`Category:`, lastEl.querySelector("h2").textContent);
-console.log(`Elements:`, lastEl.querySelectorAll("li").length);
+// console.log(`Category:`, lastEl.querySelector("h2").textContent);
+// console.log(`Elements:`, lastEl.querySelectorAll("li").length);

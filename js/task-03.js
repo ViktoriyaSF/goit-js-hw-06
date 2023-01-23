@@ -13,17 +13,20 @@ const images = [
   },
 ];
 
-for (const imag of images) {
-  const { url, alt } = imag;
-
-  const itemEL = document.createElement("li");
-  const imagEl = document.createElement("img");
-
-  imagEl.alt = alt;
-  imagEl.src = url;
-
-  itemEL.append(imagEl);
-  console.log(itemEL);
-}
-
 const listEl = document.querySelector(".gallery");
+const imageEl = images
+  .map(
+    ({ url, alt }) =>
+      `<li><img src="${url}" alt="${alt}" width = 95% height = 100%></li>`
+  )
+  .join("");
+console.log(imageEl);
+
+listEl.insertAdjacentHTML("beforeEnd", imageEl);
+
+// стиль
+
+listEl.style.display = "flex";
+listEl.style.listStyle = "none";
+const docEl = document.querySelector("body");
+docEl.style.backgroundColor = "rgb(132, 226, 223)";

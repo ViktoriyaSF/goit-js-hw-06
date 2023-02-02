@@ -3,19 +3,24 @@ const form = document.querySelector("form");
 form.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
-  event.peaventDefault();
+  event.preventDefault();
 
   const {
     elements: { email, password },
   } = event.currentTarget;
-  console.log(event.currentTarget);
+
   if (email.value === "" || password.value === "") {
-    return alert("Попредження! Всі поля повинні бути заповненні");
+    alert("Попередження! Всі поля повинні бути заповненні");
   } else {
-    const formData = new FormData(event.currentTarget);
-    formData.forEach((value, name) => {
-      console.log("value:", value);
-      console.log("name:", name);
+    console.log({
+      email: email.value,
+      password: password.value,
     });
+
+    // або сформувати через FormData
+    // const formData = new FormData(event.currentTarget);
+    // console.log(formData);
   }
+
+  event.currentTarget.reset();
 }

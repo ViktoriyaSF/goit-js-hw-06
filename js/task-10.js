@@ -7,10 +7,10 @@ const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
 
 createBtn.addEventListener("click", createBoxes);
-function createBoxes(amount) {
+function createBoxes() {
   boxesEl.innerHTML = " ";
   const elements = [];
-  for (let i = 0; i < amount; i += 1) {
+  for (let i = 0; i < numberEl.value; i += 1) {
     const createDivEl = document.createElement("div");
 
     console.log(createDivEl);
@@ -18,6 +18,8 @@ function createBoxes(amount) {
     createDivEl.style.width = 30 + 10 * i + "px";
     createDivEl.style.height = 30 + 10 * i + "px";
     createDivEl.style.backgroundColor = getRandomHexColor();
+    createDivEl.style.border = "2px solid";
+    createDivEl.style.borderColor = getRandomHexColor();
 
     elements.push(createDivEl);
   }
@@ -26,9 +28,14 @@ function createBoxes(amount) {
 
 destroyBtn.addEventListener("click", destroyBoxes);
 function destroyBoxes() {
-  numberEl.value = " ";
-  return (boxesEl.innerHTML = " ");
+  numberEl.value = "";
+  return (boxesEl.innerHTML = "");
 }
+
+// style
+boxesEl.style.display = "flex";
+boxesEl.style.flexWrap = "wrap";
+boxesEl.style.gap = "30px";
 
 // numberEl.addEventListener("input", () => {
 //   const amount = numberEl.value;

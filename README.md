@@ -52,6 +52,7 @@ Elements: 3
 
 Category: Technologies
 Elements: 5
+```
 
 ## Завдання 2
 

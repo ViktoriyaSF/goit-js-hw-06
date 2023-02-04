@@ -1,6 +1,9 @@
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
+
 const numberEl = document.querySelector("input");
 const boxesEl = document.querySelector("#boxes");
 const createBtn = document.querySelector("[data-create]");
@@ -8,7 +11,8 @@ const destroyBtn = document.querySelector("[data-destroy]");
 
 createBtn.addEventListener("click", createBoxes);
 function createBoxes() {
-  boxesEl.innerHTML = " ";
+  // чистила значення щоб робилося все спочатку
+  // boxesEl.innerHTML = " ";
   const elements = [];
   for (let i = 0; i < numberEl.value; i += 1) {
     const createDivEl = document.createElement("div");

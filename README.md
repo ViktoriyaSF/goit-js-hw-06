@@ -41,7 +41,7 @@ HTML містить список категорій `ul#categories`.
 
 В результаті, в консолі будуть виведені наступні повідомлення.
 
-````bash
+```bash
 Number of categories: 3
 
 Category: Animals
@@ -60,7 +60,7 @@ HTML містить порожній список `ul#ingredients`.
 
 ```html
 <ul id="ingredients"></ul>
-````
+```
 
 JavaScript містить масив рядків.
 

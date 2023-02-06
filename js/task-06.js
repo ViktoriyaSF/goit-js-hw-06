@@ -3,7 +3,7 @@ const maxLength = valueInput.dataset.length;
 
 valueInput.addEventListener("blur", onSymbolsInput);
 function onSymbolsInput(event) {
-  if (maxLength != event.currentTarget.value.length) {
+  if (maxLength != event.currentTarget.value.trim().length) {
     valueInput.classList.add("invalid");
     valueInput.classList.remove("valid");
   } else {
